@@ -1,19 +1,16 @@
 using System;
-using System.Net;
-using System.Text.Json;
 using AltApi.Shared;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
+using Carter;
+using Carter.ModelBinding;
+using Carter.Response;
 
-namespace AltApi.Feather
+namespace AltApi.Carter.Features.Sample
 {
-    public class Program
+    public class SampleModule : CarterModule
     {
-        public static void Main(string[] args)
+        public SampleModule()
         {
-            var app = WebApplication.Create(args);
-
-            app.MapGet("/sample", async ctx =>
+            Get("/sample", async ctx =>
             {
                 var output = new SampleOutputModel
                 {
@@ -28,13 +25,13 @@ namespace AltApi.Feather
                     }
                 };
 
-                await ctx.Response.WriteAsync(JsonSerializer.Serialize(output));
-                ctx.Response.StatusCode = (int) HttpStatusCode.OK;
+                await ctx.Response.Negotiate(output);
             });
 
-            app.MapPost("/sample", async ctx =>
+            Post("/sample", async ctx =>
             {
-                var input = await ctx.Request.ReadJsonAsync<SampleInputModel>();
+                var input = await ctx.Request.Bind<SampleInputModel>();
+                
                 var output = new SampleOutputModel
                 {
                     SomeId = input.SomeId,
@@ -48,11 +45,8 @@ namespace AltApi.Feather
                     }
                 };
 
-                await ctx.Response.WriteJsonAsync(output);
-                ctx.Response.StatusCode = (int) HttpStatusCode.OK;
+                await ctx.Response.Negotiate(output);
             });
-
-            app.Run();
         }
     }
 }

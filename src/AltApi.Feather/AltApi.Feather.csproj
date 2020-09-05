@@ -4,4 +4,12 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FeatherHttp" Version="0.1.69-alpha.g012a8b3bdb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AltApi.Shared\AltApi.Shared.csproj" />
+  </ItemGroup>
+
 </Project>
