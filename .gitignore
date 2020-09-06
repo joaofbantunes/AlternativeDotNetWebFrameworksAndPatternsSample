@@ -300,3 +300,8 @@ __pycache__/
 
 # OpenCover UI analysis results
 OpenCover/
+
+.ionide/
+
+#MacOS stuff
+.DS_Store
