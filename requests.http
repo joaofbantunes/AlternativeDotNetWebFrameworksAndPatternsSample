@@ -1,0 +1,42 @@
+# example requests
+# install REST Client VS Code extension to use -> https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+
+GET https://localhost:5001/sample HTTP/1.1
+
+###
+
+POST https://localhost:5001/sample HTTP/1.1
+content-type: application/json
+
+{
+  "SomeId": "32372794-422d-42ca-9b9c-5bf983fa4b6b",
+  "SomeDescription": "SomeDescription",
+  "SomeDate": "2020-09-05T16:50:42.6748449Z",
+  "SomeInnerModel": {
+    "SomeInnerId": "86f47ff1-a1d0-440f-bb5e-6c3ee750da96",
+    "SomeInnerDescription": "SomeInnerDescription",
+    "SomeInnerDate": "2020-09-05T16:55:40.6749109Z"
+  }
+}
+
+###
+
+# the Suave sample API is only listening on HTTP, hence the 2 versions
+
+GET http://localhost:5000/sample HTTP/1.1
+
+###
+
+POST http://localhost:5000/sample HTTP/1.1
+content-type: application/json
+
+{
+  "SomeId": "32372794-422d-42ca-9b9c-5bf983fa4b6b",
+  "SomeDescription": "SomeDescription",
+  "SomeDate": "2020-09-05T16:50:42.6748449Z",
+  "SomeInnerModel": {
+    "SomeInnerId": "86f47ff1-a1d0-440f-bb5e-6c3ee750da96",
+    "SomeInnerDescription": "SomeInnerDescription",
+    "SomeInnerDate": "2020-09-05T16:55:40.6749109Z"
+  }
+}
