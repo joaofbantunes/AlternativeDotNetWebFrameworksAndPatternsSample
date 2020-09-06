@@ -16,7 +16,7 @@ let toJson (payload: 'a) =
 let fromJson (request: HttpRequest) =
     JsonSerializer.Deserialize(request.rawForm |> System.Text.ASCIIEncoding.UTF8.GetString)
 
-// didn't really need the httpContext, but adding it to make the function reevaluate and return different ids and dates
+// didn't really need the httpContext, but adding it to make the function reevaluate and return different ids and dates (p.s. I don't know what I'm doing in F# 😛)
 let getHandler httpContext =
     let output = { 
           SampleOutputModel.SomeId = Guid.NewGuid();
