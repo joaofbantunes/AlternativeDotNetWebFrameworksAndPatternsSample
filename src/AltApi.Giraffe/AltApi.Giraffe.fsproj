@@ -12,4 +12,8 @@
     <PackageReference Include="Giraffe" Version="5.0.0-alpha-003" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="5.0.0-beta.20417.1" />
+  </ItemGroup>
+
 </Project>
