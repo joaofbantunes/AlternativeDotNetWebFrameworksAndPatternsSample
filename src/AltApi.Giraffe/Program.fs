@@ -5,7 +5,7 @@ open Microsoft.Extensions.Hosting
 open Microsoft.Extensions.DependencyInjection
 open Giraffe
 open Microsoft.AspNetCore.Http
-open FSharp.Control.Tasks.ContextInsensitive
+open FSharp.Control.Tasks
 
 type SampleInnerModel = { SomeInnerId: Guid; SomeInnerDescription: string; SomeInnerDate: DateTime }
 

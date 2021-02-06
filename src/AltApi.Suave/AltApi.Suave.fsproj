@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Suave" Version="2.6.0-beta" />
+    <PackageReference Include="Suave" Version="2.6.0" />
   </ItemGroup>
 
   <ItemGroup>
